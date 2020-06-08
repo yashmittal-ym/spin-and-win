@@ -1,6 +1,7 @@
 let prize_config={
-    count:8,
-    prize:["purple","red","orange","yellow","black","green","blue","violet"]
+    count:6,
+    //prize:["purple","red","orange","yellow","black","green","blue","violet"]
+    prize:["green","blue","purple","red","orange","yellow"]
 }
 
 
@@ -46,8 +47,8 @@ function create(){
     stand.setScale(0.15);
     
     this.wheel=this.add.sprite(w/2,h/2,'wheel');
-    this.wheel.setScale(0.73);
-    
+    this.wheel.setScale(0.53);
+    //this.wheel.angle+=30;
     this.input.on("pointerdown",spinwheel,this);
     
     font_style={
@@ -77,8 +78,8 @@ function spinwheel(){
     
     
     let rounds=Phaser.Math.Between(2,4);
-    let degrees=Phaser.Math.Between(0,7)*30;
-    let total_angle=rounds*360+degrees;
+    let degrees=Phaser.Math.Between(0,5)*60;
+    let total_angle=rounds*360+degrees+30;
     console.log(total_angle);
     let idx=Math.floor(degrees/(360/prize_config.count));
     
